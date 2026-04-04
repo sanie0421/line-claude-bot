@@ -1,0 +1,25 @@
+{
+  "name": "line-claude-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.82.0",
+    "@line/bot-sdk": "^10.6.0",
+    "@notionhq/client": "^5.16.0",
+    "better-sqlite3": "^12.8.0",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "googleapis": "^171.4.0",
+    "node-cron": "^4.2.1",
+    "pm2": "^6.0.14"
+  }
+}
