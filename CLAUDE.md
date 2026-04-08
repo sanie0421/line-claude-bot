@@ -114,3 +114,45 @@ export PATH="/usr/local/bin:$PATH"
 - フミヤはプログラミング素人。コマンドやコードは1行ずつ解説すること
 - iCloud上の旧ファイル（`~/Library/Mobile Documents/iCloud~md~obsidian/Documents/AI要塞/line-claude-bot`）は参考資料として残す
 - 詳細設計は `DESIGN.md` を参照
+
+
+---
+
+## 横断ルール（main-office から展開・2026-04-08追加）
+
+このセクションは main-office Claude（親会社）から全 vault に直接展開された横断ルール。
+出典: `~/fumiya-world/main-office/CLAUDE.md` §5 八原則+1 / §4-1-bis
+
+### 1. 編集する前に読め
+
+ローカルファイル・既存コード・既存ドキュメントを編集する前に必ず読む。
+**「読んでないファイルは絶対に変更するな」。**
+
+理由: Claude Code のデフォルト思考予算が2026年初頭から「中程度の労力」に下げられた。
+読まずに編集すると過去の文脈を無視した変更が起きる。マルチファイル作業では致命的。
+
+出典: GitHub issue #42796 / 渡辺大知 投稿 / Theo @t3.gg のClaude Codeナーフ報告
+
+### 2. 重い作業の前に /effort high
+
+複雑な作業（マルチファイル編集・整合性チェック・横断的判断・大規模リファクタリング）の前に必ず打つ：
+
+```
+/effort high
+```
+
+または特に重い場合は `/effort max`（Opus でのデバッグ等）。
+
+セッションごとに設定が必要。重い作業に入る前のおまじない。
+
+### 3. showThinkingSummaries 有効化（マシン全体）
+
+`~/.claude/settings.json` で `"showThinkingSummaries": true` を有効化済み（main-office Claude が 2026-04-08 に設定）。
+マシン全体に効くので、このセッションでも次回起動時から思考の要約が見える。
+判断ミスの早期発見・自分の動きの可視化に有用。
+
+---
+
+**展開日:** 2026-04-08
+**展開元:** main-office Claude（親会社）
+**橋本さん承認:** 済み
