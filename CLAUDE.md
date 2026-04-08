@@ -156,3 +156,30 @@ export PATH="/usr/local/bin:$PATH"
 **展開日:** 2026-04-08
 **展開元:** main-office Claude（親会社）
 **橋本さん承認:** 済み
+
+
+---
+
+## 起動コマンド固定ルール（main-office から展開・2026-04-09追加）
+
+このセッションを起動する時は、必ず以下のコマンドを使う：
+
+```bash
+CLAUDE_CODE_NO_FLICKER=1 claude --remote-control --dangerously-skip-permissions --continue
+```
+
+`.zshrc` の `work` 関数を使う場合は中身が上記に統一されてるので OK。
+
+**フラグの意味:**
+- `CLAUDE_CODE_NO_FLICKER=1` — 画面ちらつき防止
+- `--remote-control` — iPhone から接続できるリモートモード
+- `--dangerously-skip-permissions` — 権限確認ダイアログをスキップ（流れ優先）
+- `--continue` — 前セッションの context 引き継ぎ
+
+⚠️ **`--dangerously-skip-permissions` は破壊的コマンドも即実行される。**
+Claude 側は破壊的操作（rm -rf / git push --force / git reset --hard / DROP TABLE 等）の前に **必ず1回だけ口頭確認** すること。説教モードに入らず、1回確認 → 承認 → 実行 → 引く。
+
+詳細（セッション切り替えパターン・iPhone 接続手順・例外パターン）:
+→ `~/fumiya-world/main-office/decisions/launch_command_rule.md`
+
+正本: main-office CLAUDE.md §4-1 / `decisions/launch_command_rule.md`
